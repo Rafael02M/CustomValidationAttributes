@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace CustomValidationAttributes.Lib.Attributes
 {
@@ -7,6 +7,8 @@ namespace CustomValidationAttributes.Lib.Attributes
     {
         public string ErrorMessage { get; protected set; } = "Validation failed.";
 
-        public abstract bool isValid(object value);
+        public virtual bool isValid(object value) => true;
+
+        public virtual bool isValid(object value, object instance) => isValid(value);
     }
 }
