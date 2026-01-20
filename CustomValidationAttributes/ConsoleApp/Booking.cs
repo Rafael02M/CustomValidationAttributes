@@ -1,4 +1,4 @@
-﻿using CustomValidationAttributes.Lib.Attributes;
+using CustomValidationAttributes.Lib.Attributes;
 using System;
 
 namespace CustomValidationAttributes.ConsoleApp
@@ -29,6 +29,7 @@ namespace CustomValidationAttributes.ConsoleApp
         public int GuestsCount { get; set; }
 
         [Url]
+        [RequiredIf(nameof(Status), BookingStatus.Confirmed)]
         public string ConfirmationUrl { get; set; }
 
         [AllowedEnum(typeof(BookingStatus))]
