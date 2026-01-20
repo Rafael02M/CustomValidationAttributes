@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Reflection;
 
 namespace CustomValidationAttributes.Lib.Attributes
@@ -15,12 +15,7 @@ namespace CustomValidationAttributes.Lib.Attributes
             ErrorMessage = "Field is required due to condition.";
         }
 
-        public override bool isValid(object value)
-        {
-            return true;
-        }
-
-        public bool isValid(object value, object instance)
+        public override bool isValid(object value, object instance)
         {
             if (instance == null)
                 return true;
